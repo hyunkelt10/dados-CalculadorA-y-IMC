@@ -15,12 +15,12 @@ class MainActivity : AppCompatActivity() {
 
         b.btnNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.calculadora -> {
-                    Navigation.findNavController(b.fragmentContainerView).navigate(R.id.calculadoraFragment)
+                R.id.dados -> {
+                    Navigation.findNavController(b.fragmentContainerView).navigate(R.id.dadosFragment)
                     true
                 }
-                R.id.dados -> {
-                    findNavController(R.id.fragmentContainerView).navigate(R.id.dadosFragment)
+                R.id.calculadora -> {
+                    findNavController(R.id.fragmentContainerView).navigate(R.id.calculadoraFragment)
                     true }
                 R.id.imc -> {
                     b.fragmentContainerView.findNavController().navigate(R.id.imcFragment)

@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/calculadora"
-        android:icon="@drawable/ic_baseline_calculadora"
-        android:title="calculadora" />
-    <item
         android:id="@+id/dados"
-        android:icon="@drawable/ic_baseline_dados"
+        android:icon="@drawable/ic_baseline_calculadora"
         android:title="dados" />
+    <item
+        android:id="@+id/calculadora"
+        android:icon="@drawable/ic_baseline_dados"
+        android:title="calculadora" />
     <item
         android:id="@+id/imc"
         android:icon="@drawable/ic_baseline_peso"
