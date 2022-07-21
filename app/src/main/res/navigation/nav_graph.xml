@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dadosFragment">
+
+    <fragment
+        android:id="@+id/dadosFragment"
+        android:name="com.example.dadoscalculadoraeimc.DadosFragment"
+        android:label="fragment_dados"
+        tools:layout="@layout/fragment_dados" >
+        <action
+            android:id="@+id/action_dadosFragment_to_calculadoraFragment"
+            app:destination="@id/calculadoraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculadoraFragment"
+        android:name="com.example.dadoscalculadoraeimc.CalculadoraFragment"
+        android:label="fragment_calculadora"
+        tools:layout="@layout/fragment_calculadora" >
+        <action
+            android:id="@+id/action_calculadoraFragment_to_dadosFragment"
+            app:destination="@id/dadosFragment" />
+        <action
+            android:id="@+id/action_calculadoraFragment_to_imcFragment"
+            app:destination="@id/imcFragment" />
+        <action
+            android:id="@+id/action_calculadoraFragment_to_dadosFragment2"
+            app:destination="@id/dadosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imcFragment"
+        android:name="com.example.dadoscalculadoraeimc.imcFragment"
+        android:label="fragment_imc"
+        tools:layout="@layout/fragment_imc" >
+        <action
+            android:id="@+id/action_imcFragment_to_calculadoraFragment"
+            app:destination="@id/calculadoraFragment" />
+        <action
+            android:id="@+id/action_imcFragment_to_dadosFragment"
+            app:destination="@id/dadosFragment" />
+    </fragment>
+</navigation>
