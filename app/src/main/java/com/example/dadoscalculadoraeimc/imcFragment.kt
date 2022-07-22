@@ -103,6 +103,7 @@ class imcFragment : Fragment() {
     fun showTable(){
         val dialog = TableFragment()
         dialog.show(requireActivity().supportFragmentManager, "TablaPeso")
+//        dialog.show(getParentFragmentManager(), "TablaPeso")
     }
 
     fun seleccion () {
