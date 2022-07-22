@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.example.dadoscalculadoraeimc.databinding.FragmentDadosBinding
 import com.example.dadoscalculadoraeimc.databinding.FragmentImcBinding
@@ -55,7 +56,7 @@ class imcFragment : Fragment() {
             override fun onStopTrackingTouch(seekBar: SeekBar?)  { calcIMC() }
         })
 
-//        b.imageView.setOnClickListener { showTable() }
+        b.imageView.setOnClickListener { seleccion() }
     }
 
 
@@ -70,7 +71,7 @@ class imcFragment : Fragment() {
     }
 
     fun calcObesidad () {
-        var colorSnackbar = when (IMC){
+        val colorSnackbar = when (IMC){
             in 0.0..15.99 -> ContextCompat.getColor(requireContext(), R.color.delgadez_severa)
             in 16.0..16.99 -> ContextCompat.getColor(requireContext(), R.color.delgadez_moderada)
             in 17.0..18.49 -> ContextCompat.getColor(requireContext(), R.color.delgadez_leve)
@@ -95,17 +96,27 @@ class imcFragment : Fragment() {
         sb.setBackgroundTint(colorSnackbar)
         sb.setActionTextColor(Color.DKGRAY)
         sb.setAction("Ver Tabla"){
-//            showTable()
+            showTable()
         }
         sb.show()
     }
-//    fun showTable(){
-//        val dialog = TableFragment()
-//        dialog.show(supportFragmentManager, "TablaPeso")
-//    }
+    fun showTable(){
+        val dialog = TableFragment()
+        dialog.show(requireActivity().supportFragmentManager, "TablaPeso")
+    }
+
+    fun seleccion () {
+        val inflater = this.layoutInflater
+        val custom_layout = inflater.inflate(R.layout.tabla_imc, null)
 
 
+        AlertDialog.Builder((requireContext()), R.style.MyThemeOverlay)
+            .setView(custom_layout)
 
 
+            .setPositiveButton(R.string.aceptar, null)
 
+
+            .show()
+    }
 }
